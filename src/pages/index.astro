@@ -1,5 +1,8 @@
 ---
 const pageTitle = "Home - 1-UP Jiu Jitsu";
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -11,13 +14,12 @@ const pageTitle = "Home - 1-UP Jiu Jitsu";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-    	<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-		<a href="/schedule/">Schedule</a>
+		<Header />
 
 		<h1>Take your jiu jitsu game to the next level at 1-Up Jiu Jitsu</h1>
 		<p>1-Up Jiu-Jitsu is one of the longest running Brazilian Jiu-Jitsu schools on the west-side of Cleveland. We offer classes for kids and adults, with skill levels ranging from beginner to advanced. Our mission at 1-Up Jiu-Jitsu is to provide detailed instruction in Sport BJJ, Submission Grappling, and Self Defense at affordable prices that defy the current state of the market. We believe in the value of training both with and without the gi, as each style contributes to the development of the other. Please contact us for class information, come check us out at Old School Iron Gym in Brookpark.</p>
 		<p>Interested in Jiu-Jitsu classes? Call 330-760-4224 for more info, or just stop by the gym. Your first class is always free.</p>
+
+		<Footer />
 	</body>
 </html>

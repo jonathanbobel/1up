@@ -1,5 +1,7 @@
 ---
-
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -11,22 +13,19 @@
 		<title>1-UP JIU JITSU</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-    	<a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-        <a href="/schedule/">Schedule</a>
-        
+		<Header />
+
 		<h1>Take your jiu jitsu game to the next level at 1-Up Jiu Jitsu</h1>
 		<table style="width:100%; border-collapse: collapse;" border="1" class="calendar">
             <thead>
                 <tr>
-                <th style="padding: 8px; text-align: left;">Time</th>
-                <th style="padding: 8px; text-align: left;">Monday</th>
-                <th style="padding: 8px; text-align: left;">Tuesday</th>
-                <th style="padding: 8px; text-align: left;">Wednesday</th>
-                <th style="padding: 8px; text-align: left;">Thursday</th>
-                <th style="padding: 8px; text-align: left;">Friday</th>
-                <th style="padding: 8px; text-align: left;">Saturday</th>
+                <th style="padding: 8px; text-align: left;" class="day">Time</th>
+                <th style="padding: 8px; text-align: left;" class="day">Monday</th>
+                <th style="padding: 8px; text-align: left;" class="day">Tuesday</th>
+                <th style="padding: 8px; text-align: left;" class="day">Wednesday</th>
+                <th style="padding: 8px; text-align: left;" class="day">Thursday</th>
+                <th style="padding: 8px; text-align: left;" class="day">Friday</th>
+                <th style="padding: 8px; text-align: left;" class="day">Saturday</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +37,33 @@
                 <td>Morning BJJ (No Gi)</td>
                 <td></td>
                 <td></td>
+                </tr>
+                  <tr>
+                <td>10:00 – 11:00AM</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Kids BJJ</td>
+                </tr>
+                <tr>
+                <td>11:00 – 12:00PM</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Adult BJJ Basics (Gi)</td>
+                </tr>
+                <tr>
+                <td>12:00 – 1:30PM</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>BJJ All Levels (Gi)</td>
                 </tr>
                 <tr>
                 <td>5:30 – 6:30PM</td>
@@ -66,50 +92,25 @@
                 <td></td>
                 <td></td>
                 </tr>
-                <tr>
-                <td>10:00 – 11:00AM</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Kids BJJ</td>
-                </tr>
-                <tr>
-                <td>11:00 – 12:00PM</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Adult BJJ Basics (Gi)</td>
-                </tr>
-                <tr>
-                <td>12:00 – 1:30PM</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>BJJ All Levels (Gi)</td>
-                </tr>
             </tbody>
         </table>
+        <Footer/>
 	</body>
     <style>
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 1rem;
-            text-align: center;
+        .calendar th,
+        .calendar td {
+        border: 1px solid #ccc;
+        padding: 12px;
+        vertical-align: top;
         }
-        .day {
-            font-weight: bold;
+
+        .calendar th {
+        background-color: #f4f4f4;
+        font-weight: bold;
         }
-        .event {
-            background: #f0f0f0;
-            padding: 0.5rem;
-            border-radius: 6px;
+
+        .calendar td {
+        min-height: 80px;
         }
     </style>
 </html>
