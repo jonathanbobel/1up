@@ -1,9 +1,6 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import paul from '../images/paul.jpeg';
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
 const pageTitle = "About 1-UP Jiu Jitsu";
 const identity = {
   firstName: "Sarah",
@@ -18,44 +15,22 @@ const goal = 3;
 const skillColor = "navy";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-         <style define:vars={{skillColor}}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
-            .skill {
-                color: var(--skillColor);
-                font-weight: bold;
-            }
-        </style>
-	</head>
-	<body>
-        <Header />
-		<h1>1-UP Jiu-Jitsu's Mission</h1>
-        <p>Our mission at 1-Up Jiu-Jitsu/Team Chard West is to provide detailed instruction in Sport Brazilian Jiu-Jitsu, Submission Grappling, and Self Defense at affordable prices that defy the current state of the market. We believe in the value of training both with and without the gi, as each style contributes to the development of the other. Please contact us for class information. </p>
-        <img src={paul.src} alt="Paul Bartholet, Head Instructor"/>
-        <p>Here are a few facts about me:</p>
-        <ul>
-        <li>My name is {identity.firstName}.</li>
-        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-            {identity.hobbies.length >= 2 &&
-                <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-            }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
-        {happy && <p>I am happy to be learning Astro!</p>}
-        {finished && <p>I finished this tutorial!</p>}
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-        <Footer />
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <p>Our mission at 1-Up Jiu-Jitsu/Team Chard West is to provide detailed instruction in Sport Brazilian Jiu-Jitsu, Submission Grappling, and Self Defense at affordable prices that defy the current state of the market. We believe in the value of training both with and without the gi, as each style contributes to the development of the other. Please contact us for class information. </p>
+    <img src={paul.src} alt="Paul Bartholet, Head Instructor"/>
+    <p>Here are a few facts about me:</p>
+    <ul>
+    <li>My name is {identity.firstName}.</li>
+    <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 &&
+            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+        }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+</BaseLayout>

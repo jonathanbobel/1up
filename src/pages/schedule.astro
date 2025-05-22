@@ -1,21 +1,10 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Schedule"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>1-UP JIU JITSU</title>
-	</head>
-	<body>
-		<Header />
+<BaseLayout pageTitle={pageTitle}>
 
-		<h1>Take your jiu jitsu game to the next level at 1-Up Jiu Jitsu</h1>
 		<table style="width:100%; border-collapse: collapse;" border="1" class="calendar">
             <thead>
                 <tr>
@@ -94,23 +83,5 @@ import Footer from '../components/Footer.astro';
                 </tr>
             </tbody>
         </table>
-        <Footer/>
-	</body>
-    <style>
-        .calendar th,
-        .calendar td {
-        border: 1px solid #ccc;
-        padding: 12px;
-        vertical-align: top;
-        }
-
-        .calendar th {
-        background-color: #f4f4f4;
-        font-weight: bold;
-        }
-
-        .calendar td {
-        min-height: 80px;
-        }
-    </style>
+    </BaseLayout>
 </html>
