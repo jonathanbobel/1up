@@ -109,3 +109,12 @@ footer {
 .calendar td {
     min-height: 80px;
 }
+
+html.dark {
+  background-color: #010101;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
